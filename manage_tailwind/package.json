@@ -1,13 +1,12 @@
 {
-  "name": "manage-tailwind",
+  "name": "tailwind",
   "version": "1.0.0",
-  "description": "",
+  "description": "tailwind sample",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./input.css -o ./css/main.css",
-    "watch": "tailwindcss -i ./input.css -o ./css/main.css"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Nikita",
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.2.4"
