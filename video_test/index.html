@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>video_test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- the video -->
+    <video autoplay muted loop id="myVideo">
+      <source src="monsoon.mp4" type="video/mp4" />
+    </video>
+
+    <!-- credits -->
+    <div class="content">
+      <h1>For the video thanks to</h1>
+      <a
+        id="credits"
+        target="_blank"
+        href="https://www.youtube.com/watch?v=zZ0Z5wSka6c&ab_channel=AbhishekSachidanandan"
+        >Abhishek Sachidanandan</a
+      >
+      <!-- button -->
+      <button id="myBtn" onclick="myFunction()">Pause</button>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
