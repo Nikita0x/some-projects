@@ -1,0 +1,97 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  background: radial-gradient(circle, rgb(16, 17, 52) 6%, rgb(16, 17, 52) 15%, rgb(11, 12, 52) 25%, rgb(13, 20, 88) 80%);
+}
+body .Games_container {
+  border: 2px solid red;
+  background-color: green;
+  width: 100%;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+body .Games_container .Games_cards_container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 2rem;
+}
+body .Games_container .Games_cards_container img {
+  object-fit: inherit;
+  height: 80%;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+body .Games_container .Games_cards_container h1 {
+  color: #d0e9ff;
+  font-weight: bold;
+  font-size: 20px;
+}
+body .Games_container .Games_cards_container p {
+  color: rgba(208, 233, 255, 0.6);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+body .Tab_title {
+  text-align: left;
+  color: whitesmoke;
+  font-size: 38px;
+  text-transform: uppercase;
+  font-family: "Archivo", sans-serif;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=main.css.map */
