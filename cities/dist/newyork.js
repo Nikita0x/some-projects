@@ -41,6 +41,6 @@ function showSlides_ny(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active_ny", "");
   }
-  slides[slideIndex_ny - 1].style.display = "block";
+  // slides[slideIndex_ny - 1].style.display = "block";
   dots[slideIndex_ny - 1].className += " active_ny";
 }
