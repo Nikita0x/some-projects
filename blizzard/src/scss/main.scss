@@ -81,6 +81,17 @@ body {
       grid-template-rows: 50%;
       gap: 2rem;
 
+      .Games_cards {
+        transition: transform 0.3s ease;
+      }
+      .transition:hover {
+        transform: scale(1.04);
+      }
+
+      a {
+        text-decoration: none;
+      }
+
       img {
         border-radius: 10px;
         object-fit: inherit;

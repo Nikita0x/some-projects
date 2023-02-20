@@ -75,6 +75,15 @@ body .Games_container .Games_cards_container {
   grid-template-rows: 50%;
   gap: 2rem;
 }
+body .Games_container .Games_cards_container .Games_cards {
+  transition: transform 0.3s ease;
+}
+body .Games_container .Games_cards_container .transition:hover {
+  transform: scale(1.04);
+}
+body .Games_container .Games_cards_container a {
+  text-decoration: none;
+}
 body .Games_container .Games_cards_container img {
   border-radius: 10px;
   object-fit: inherit;
