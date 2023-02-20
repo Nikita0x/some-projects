@@ -56,6 +56,12 @@ h6 {
 body {
   background: radial-gradient(circle, rgb(16, 17, 52) 6%, rgb(16, 17, 52) 15%, rgb(11, 12, 52) 25%, rgb(13, 20, 88) 80%);
 }
+body .on {
+  display: block;
+}
+body .off {
+  display: none;
+}
 body .Games_container {
   border: 2px solid red;
   background-color: green;
@@ -66,24 +72,43 @@ body .Games_container {
 body .Games_container .Games_cards_container {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: 50%;
   gap: 2rem;
 }
 body .Games_container .Games_cards_container img {
+  border-radius: 10px;
   object-fit: inherit;
   height: 80%;
   max-height: 100%;
   width: 100%;
   max-width: 100%;
 }
+body .Games_container .Games_cards_container video {
+  display: none;
+  opacity: 1;
+  border-radius: 10px;
+  object-fit: inherit;
+  height: 80%;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+body .Games_container .Games_cards_container #wow_preview:hover {
+  display: block;
+}
 body .Games_container .Games_cards_container h1 {
+  line-height: 20px;
   color: #d0e9ff;
   font-weight: bold;
-  font-size: 20px;
+  padding-top: 1rem;
+  font-size: 23px;
 }
 body .Games_container .Games_cards_container p {
+  padding-top: 5px;
   color: rgba(208, 233, 255, 0.6);
   font-weight: bold;
   text-transform: uppercase;
+  font-size: 15px;
 }
 body .Tab_title {
   text-align: left;
