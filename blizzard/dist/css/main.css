@@ -93,9 +93,6 @@ body .Games_container .Games_cards_container video {
   width: 100%;
   max-width: 100%;
 }
-body .Games_container .Games_cards_container #wow_preview:hover {
-  display: block;
-}
 body .Games_container .Games_cards_container h1 {
   line-height: 20px;
   color: #d0e9ff;

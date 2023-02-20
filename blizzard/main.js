@@ -1,39 +1,27 @@
 let wow_image = document.getElementById("wow_image");
+let wow_card = document.getElementById("wow_card");
+let wow_link = document.getElementById("test");
 let wow_preview = document.getElementById("wow_preview");
-const on = document.getElementsByClassName("on");
-const off = document.getElementsByClassName("off");
+let mouseHasEntered = false;
 
-wow_image.addEventListener("mouseover", function () {
-  wow_image = wow_image.style.display = "none";
-  wow_preview = wow_preview.style.display = "block";
+wow_card.addEventListener("mouseenter", function () {
+  wow_image.style.display = "none";
+  wow_preview.style.display = "block";
+  mouseHasEntered = true;
+
   console.log(wow_image);
   console.log(wow_preview);
   console.log("Image to preview -changed");
 });
 
-// wow_image.addEventListener("mouseout", function () {
-//   wow_image.setAttribute("style", "display: block");
-//   wow_preview.setAttribute("style", "display: none");
-//   console.log(wow_image);
-//   console.log(wow_preview);
-//   console.log("Image to preview to image");
-// });
+wow_card.addEventListener("mouseleave", function () {
+  wow_image.style.display = "block";
+  wow_preview.style.display = "none";
+  wow_preview.currentTime = 0;
 
-// wow_image.addEventListener("mouseover", function () {
-//   wow_image = wow_image.style.display = "none";
-//   wow_preview = wow_preview.style.display = "block";
-//   console.log(wow_image);
-//   console.log(wow_preview);
-//   console.log("Image to preview -changed");
-// });
+  mouseHasEntered = false;
 
-// wow_image.addEventListener("mouseout", function () {
-//   if (wow_image.style.display == "none") {
-//     wow_image.style.display = "block";
-//   }
-//   wow_image = wow_image.style.display = "block";
-//   wow_preview = wow_preview.style.display = "none";
-//   console.log(wow_image);
-//   console.log(wow_preview);
-//   console.log("Image to preview to image");
-// });
+  console.log(wow_image);
+  console.log(wow_preview);
+  console.log("Image to preview to image");
+});
