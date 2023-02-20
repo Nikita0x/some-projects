@@ -41,6 +41,10 @@ body {
   background: #415a77;
   border: 2px solid #e0e1dd;
 }
+#projects-content ul li:hover {
+  width: 100%;
+  background: rgb(105, 38, 38);
+}
 #projects-content a {
   color: #e0e1dd;
   text-decoration: none;

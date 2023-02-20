@@ -66,6 +66,13 @@ body {
     background: $content_background;
     border: 2px solid $font_color;
 
+    ul {
+        li:hover {
+            width: 100%;
+            background: rgb(105, 38, 38);
+        }
+    }
+
     a {
         color: $font_color;
         text-decoration: none;
@@ -80,5 +87,6 @@ body {
     a:hover {
         color: $hover_color;
     }
+
 
 }
