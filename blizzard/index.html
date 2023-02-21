@@ -9,7 +9,15 @@
   </head>
   <body>
     <div class="Games_container">
-      <div class="Tab_title">Featured games</div>
+      <div class="Tab_title">
+        Featured games
+
+        <div id="sorting">
+          <button class="btn" id="btn_pc">PC</button>
+          <button class="btn" id="btn_console">Console</button>
+          <button class="btn" id="btn_mobile">Mobile</button>
+        </div>
+      </div>
 
       <div class="Games_cards_container">
         <!-- games_cards -->
@@ -83,7 +91,7 @@
           </div>
         </a>
         <!-- hearthstone -->
-        <a href="https://hearthstone.blizzard.com/en-us">
+        <a href="https://hearthstone.blizzard.com/en-us" class="mobile">
           <div class="Games_cards transition" id="hearthstone_card">
             <img
               id="hearthstone_image"
@@ -106,7 +114,7 @@
         </a>
 
         <!-- diablo immortal -->
-        <a href="https://diabloimmortal.blizzard.com/en-us/">
+        <a href="https://diabloimmortal.blizzard.com/en-us/" class="mobile">
           <div class="Games_cards transition" id="diabloimmortal_card">
             <img
               id="diabloimmortal_image"

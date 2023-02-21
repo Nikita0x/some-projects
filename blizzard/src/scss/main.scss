@@ -60,14 +60,6 @@ $game_genre: rgba(208, 233, 255, 0.6);
 body {
   background: $background-color;
 
-  // display on/off
-  .on {
-    display: block;
-  }
-  .off {
-    display: none;
-  }
-
   .Games_container {
     border: 2px solid red;
     background-color: green;
@@ -75,6 +67,42 @@ body {
     height: 130vh;
     padding-left: 120px;
     padding-right: 120px;
+
+    #sorting {
+      display: flex;
+      justify-content: right;
+    }
+
+    // button
+    button {
+      -webkit-border-radius: 150px;
+      -moz-border-radius: 150px;
+      border-radius: 150px;
+      color: whitesmoke;
+      background-color: #3d556f;
+      cursor: pointer;
+      font-size: 18px;
+      padding: 2px 22px;
+      margin-left: 15px;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #536981;
+    }
+
+    .active {
+      background-color: #0e91ec;
+    }
+    .btn.active:hover {
+      background-color: #0e91ec;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    //
 
     .Games_cards_container {
       display: grid;
@@ -85,6 +113,7 @@ body {
         transition: transform 0.3s ease;
         height: 85%; /* changes the size and height of cards*/
         width: 100%;
+        padding-top: 20px;
       }
       .transition:hover {
         transform: scale(1.04);

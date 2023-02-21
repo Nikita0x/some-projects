@@ -56,12 +56,6 @@ h6 {
 body {
   background: radial-gradient(circle, rgb(16, 17, 52) 6%, rgb(16, 17, 52) 15%, rgb(11, 12, 52) 25%, rgb(13, 20, 88) 80%);
 }
-body .on {
-  display: block;
-}
-body .off {
-  display: none;
-}
 body .Games_container {
   border: 2px solid red;
   background-color: green;
@@ -69,6 +63,34 @@ body .Games_container {
   height: 130vh;
   padding-left: 120px;
   padding-right: 120px;
+}
+body .Games_container #sorting {
+  display: flex;
+  justify-content: right;
+}
+body .Games_container button {
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  border-radius: 150px;
+  color: whitesmoke;
+  background-color: #3d556f;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 2px 22px;
+  margin-left: 15px;
+  border: none;
+}
+body .Games_container button:hover {
+  background-color: #536981;
+}
+body .Games_container .active {
+  background-color: #0e91ec;
+}
+body .Games_container .btn.active:hover {
+  background-color: #0e91ec;
+}
+body .Games_container .hidden {
+  display: none;
 }
 body .Games_container .Games_cards_container {
   display: grid;
@@ -79,6 +101,7 @@ body .Games_container .Games_cards_container .Games_cards {
   transition: transform 0.3s ease;
   height: 85%; /* changes the size and height of cards*/
   width: 100%;
+  padding-top: 20px;
 }
 body .Games_container .Games_cards_container .transition:hover {
   transform: scale(1.04);

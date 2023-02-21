@@ -258,3 +258,92 @@ heroesofthestorm_card.addEventListener("mouseleave", function () {
   console.log("Image visible, preview hidden");
 });
 // hears of the strom js
+
+// filering of items
+const games_cards = document.getElementsByClassName("Games_cards");
+const btn_Pc = document.getElementById("btn_pc");
+const btn_Console1 = document.getElementById("btn_console");
+const btn_Mobile = document.getElementById("btn_mobile");
+
+let Console1_active = 0;
+let Pc_active = 1;
+let Mobile_active = 0;
+btn_Pc.classList.add("active");
+
+// runs through all cards and hides all but mobile only
+btn_Mobile.addEventListener("click", function Mobile() {
+  if (btn_Mobile.classList.contains("active") && Mobile_active == 1) {
+    for (let i = 0; i < games_cards.length; i++) {
+      games_cards[i].style.display = "block";
+      btn_Mobile.classList.remove("active");
+      Mobile_active = 0;
+    }
+    console.log("Showing all games.");
+    console.log(Mobile_active);
+  } else {
+    for (let i = 0; i < games_cards.length; i++) {
+      games_cards[i].style.display = "none";
+      diabloimmortal_card.style.display = "block";
+      hearthstone_card.style.display = "block";
+      btn_Mobile.classList.add("active");
+      Mobile_active = 1;
+    }
+  }
+  console.log("Showing Mobile only games.");
+  console.log(Mobile_active);
+});
+
+// runs through all cards and hides all but console only
+btn_Console1.addEventListener("click", function Console1() {
+  if (btn_Console1.classList.contains("active") && Console1_active == 1) {
+    for (let i = 0; i < games_cards.length; i++) {
+      games_cards[i].style.display = "block";
+      btn_Console1.classList.remove("active");
+      Console1_active = 0;
+    }
+    console.log("Showing all games.");
+    console.log(console_active);
+  } else {
+    for (let i = 0; i < games_cards.length; i++) {
+      games_cards[i].style.display = "none";
+      overwatch2_card.style.display = "block";
+      diablo2ressurected_card.style.display = "block";
+      diablo3_card.style.display = "block";
+      btn_Console1.classList.add("active");
+      Console1_active = 1;
+    }
+    console.log("Showing Console only games.");
+    console.log(Console1_active);
+  }
+});
+
+// runs through all cards and hides all but PC only
+btn_Pc.addEventListener("click", function Pc() {
+  if (btn_Pc.classList.contains("active") && Pc_active == 1) {
+    for (let i = 0; i < games_cards.length; i++) {
+      games_cards[i].style.display = "block";
+      btn_Pc.classList.remove("active");
+      Pc_active = 0;
+    }
+    console.log("Showing all games.");
+    console.log(Pc_active);
+  } else {
+    for (let i = 0; i < games_cards.length; i++) {
+      games_cards[i].style.display = "none";
+      wow_card.style.display = "block";
+      overwatch2_card.style.display = "block";
+      wowclassic_card.style.display = "block";
+      hearthstone_card.style.display = "block";
+      diabloimmortal_card.style.display = "block";
+      diablo2ressurected_card.style.display = "block";
+      diablo3_card.style.display = "block";
+      starcraft2_card.style.display = "block";
+      warcraft3_card.style.display = "block";
+      heroesofthestorm_card.style.display = "block";
+      btn_Pc.classList.add("active");
+      Pc_active = 1;
+    }
+    console.log("Showing Pc only games.");
+    console.log(PC_active);
+  }
+});
