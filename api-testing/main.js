@@ -1,6 +1,7 @@
 const button = document.querySelector(".btn");
 const image = document.querySelector(".image");
 const url = "https://aws.random.cat/meow";
+const divSource = document.querySelector("#source");
 
 async function fetchHandler() {
   try {
