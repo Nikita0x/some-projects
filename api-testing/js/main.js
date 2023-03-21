@@ -58,10 +58,8 @@ function fetchImage3() {
     .catch((err) => console.error(err));
 }
 
-// get facts
-
-// button click listener
-button.addEventListener("click", () => {
+// images change
+function imagesChange() {
   clicksCount++;
   if (clicksCount == 1) {
     fetchImage1();
@@ -88,7 +86,12 @@ button.addEventListener("click", () => {
     image3.style.display = "none";
   }
   console.log(clicksCount);
-});
+}
+
+// // button click listener
+// button.addEventListener("click", () => {
+
+// });
 
 // logic for catFacts
 button.addEventListener("click", () => {
@@ -110,6 +113,7 @@ button.addEventListener("click", () => {
       });
   }
   catFacts();
+  imagesChange();
 });
 
 // langauges functions
@@ -136,36 +140,9 @@ function ukrLangauge() {
 }
 uaButton.addEventListener("click", () => {
   ukrLangauge();
+  imagesChange();
 });
 
-uaButton.addEventListener("click", () => {
-  clicksCount++;
-  if (clicksCount == 1) {
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  } else if (clicksCount == 2) {
-    image.style.display = "none";
-    image2.style.display = "block";
-    image3.style.display = "none";
-  } else if (clicksCount == 3) {
-    image.style.display = "none";
-    image2.style.display = "none";
-    image3.style.display = "block";
-  } else {
-    clicksCount = 1;
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  }
-  console.log(clicksCount);
-});
 // de
 
 function deLangauge() {
@@ -190,35 +167,7 @@ function deLangauge() {
 }
 deButton.addEventListener("click", () => {
   deLangauge();
-});
-
-deButton.addEventListener("click", () => {
-  clicksCount++;
-  if (clicksCount == 1) {
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  } else if (clicksCount == 2) {
-    image.style.display = "none";
-    image2.style.display = "block";
-    image3.style.display = "none";
-  } else if (clicksCount == 3) {
-    image.style.display = "none";
-    image2.style.display = "none";
-    image3.style.display = "block";
-  } else {
-    clicksCount = 1;
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  }
-  console.log(clicksCount);
+  imagesChange();
 });
 
 // ru
@@ -244,35 +193,7 @@ function ruLangauge() {
 }
 ruButton.addEventListener("click", () => {
   ruLangauge();
-});
-
-ruButton.addEventListener("click", () => {
-  clicksCount++;
-  if (clicksCount == 1) {
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  } else if (clicksCount == 2) {
-    image.style.display = "none";
-    image2.style.display = "block";
-    image3.style.display = "none";
-  } else if (clicksCount == 3) {
-    image.style.display = "none";
-    image2.style.display = "none";
-    image3.style.display = "block";
-  } else {
-    clicksCount = 1;
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  }
-  console.log(clicksCount);
+  imagesChange();
 });
 
 // pt
@@ -298,34 +219,7 @@ function ptLangauge() {
 }
 ptButton.addEventListener("click", () => {
   ptLangauge();
-});
-ptButton.addEventListener("click", () => {
-  clicksCount++;
-  if (clicksCount == 1) {
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  } else if (clicksCount == 2) {
-    image.style.display = "none";
-    image2.style.display = "block";
-    image3.style.display = "none";
-  } else if (clicksCount == 3) {
-    image.style.display = "none";
-    image2.style.display = "none";
-    image3.style.display = "block";
-  } else {
-    clicksCount = 1;
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  }
-  console.log(clicksCount);
+  imagesChange();
 });
 
 // es
@@ -351,35 +245,7 @@ function esLangauge() {
 }
 esButton.addEventListener("click", () => {
   esLangauge();
-});
-
-esButton.addEventListener("click", () => {
-  clicksCount++;
-  if (clicksCount == 1) {
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  } else if (clicksCount == 2) {
-    image.style.display = "none";
-    image2.style.display = "block";
-    image3.style.display = "none";
-  } else if (clicksCount == 3) {
-    image.style.display = "none";
-    image2.style.display = "none";
-    image3.style.display = "block";
-  } else {
-    clicksCount = 1;
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  }
-  console.log(clicksCount);
+  imagesChange();
 });
 
 // cz
@@ -405,34 +271,7 @@ function czLangauge() {
 }
 czButton.addEventListener("click", () => {
   czLangauge();
-});
-czButton.addEventListener("click", () => {
-  clicksCount++;
-  if (clicksCount == 1) {
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  } else if (clicksCount == 2) {
-    image.style.display = "none";
-    image2.style.display = "block";
-    image3.style.display = "none";
-  } else if (clicksCount == 3) {
-    image.style.display = "none";
-    image2.style.display = "none";
-    image3.style.display = "block";
-  } else {
-    clicksCount = 1;
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  }
-  console.log(clicksCount);
+  imagesChange();
 });
 
 // fl
@@ -458,35 +297,7 @@ function flLangauge() {
 }
 flButton.addEventListener("click", () => {
   flLangauge();
-});
-
-flButton.addEventListener("click", () => {
-  clicksCount++;
-  if (clicksCount == 1) {
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  } else if (clicksCount == 2) {
-    image.style.display = "none";
-    image2.style.display = "block";
-    image3.style.display = "none";
-  } else if (clicksCount == 3) {
-    image.style.display = "none";
-    image2.style.display = "none";
-    image3.style.display = "block";
-  } else {
-    clicksCount = 1;
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  }
-  console.log(clicksCount);
+  imagesChange();
 });
 
 // urdu
@@ -512,32 +323,5 @@ function urduLangauge() {
 }
 urduButton.addEventListener("click", () => {
   urduLangauge();
-});
-urduButton.addEventListener("click", () => {
-  clicksCount++;
-  if (clicksCount == 1) {
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  } else if (clicksCount == 2) {
-    image.style.display = "none";
-    image2.style.display = "block";
-    image3.style.display = "none";
-  } else if (clicksCount == 3) {
-    image.style.display = "none";
-    image2.style.display = "none";
-    image3.style.display = "block";
-  } else {
-    clicksCount = 1;
-    fetchImage1();
-    fetchImage2();
-    fetchImage3();
-    image.style.display = "block";
-    image2.style.display = "none";
-    image3.style.display = "none";
-  }
-  console.log(clicksCount);
+  imagesChange();
 });
