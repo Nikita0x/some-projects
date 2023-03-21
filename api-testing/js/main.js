@@ -113,6 +113,7 @@ button.addEventListener("click", () => {
 });
 
 // langauges functions
+// ua
 function ukrLangauge() {
   // Remove the last cat fact before adding a new one
   const lastCatFact = catFactsContainer.lastChild;
@@ -136,6 +137,36 @@ function ukrLangauge() {
 uaButton.addEventListener("click", () => {
   ukrLangauge();
 });
+
+uaButton.addEventListener("click", () => {
+  clicksCount++;
+  if (clicksCount == 1) {
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  } else if (clicksCount == 2) {
+    image.style.display = "none";
+    image2.style.display = "block";
+    image3.style.display = "none";
+  } else if (clicksCount == 3) {
+    image.style.display = "none";
+    image2.style.display = "none";
+    image3.style.display = "block";
+  } else {
+    clicksCount = 1;
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  }
+  console.log(clicksCount);
+});
+// de
 
 function deLangauge() {
   // Remove the last cat fact before adding a new one
@@ -161,6 +192,36 @@ deButton.addEventListener("click", () => {
   deLangauge();
 });
 
+deButton.addEventListener("click", () => {
+  clicksCount++;
+  if (clicksCount == 1) {
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  } else if (clicksCount == 2) {
+    image.style.display = "none";
+    image2.style.display = "block";
+    image3.style.display = "none";
+  } else if (clicksCount == 3) {
+    image.style.display = "none";
+    image2.style.display = "none";
+    image3.style.display = "block";
+  } else {
+    clicksCount = 1;
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  }
+  console.log(clicksCount);
+});
+
+// ru
 function ruLangauge() {
   // Remove the last cat fact before adding a new one
   const lastCatFact = catFactsContainer.lastChild;
@@ -185,6 +246,36 @@ ruButton.addEventListener("click", () => {
   ruLangauge();
 });
 
+ruButton.addEventListener("click", () => {
+  clicksCount++;
+  if (clicksCount == 1) {
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  } else if (clicksCount == 2) {
+    image.style.display = "none";
+    image2.style.display = "block";
+    image3.style.display = "none";
+  } else if (clicksCount == 3) {
+    image.style.display = "none";
+    image2.style.display = "none";
+    image3.style.display = "block";
+  } else {
+    clicksCount = 1;
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  }
+  console.log(clicksCount);
+});
+
+// pt
 function ptLangauge() {
   // Remove the last cat fact before adding a new one
   const lastCatFact = catFactsContainer.lastChild;
@@ -208,7 +299,36 @@ function ptLangauge() {
 ptButton.addEventListener("click", () => {
   ptLangauge();
 });
+ptButton.addEventListener("click", () => {
+  clicksCount++;
+  if (clicksCount == 1) {
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  } else if (clicksCount == 2) {
+    image.style.display = "none";
+    image2.style.display = "block";
+    image3.style.display = "none";
+  } else if (clicksCount == 3) {
+    image.style.display = "none";
+    image2.style.display = "none";
+    image3.style.display = "block";
+  } else {
+    clicksCount = 1;
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  }
+  console.log(clicksCount);
+});
 
+// es
 function esLangauge() {
   // Remove the last cat fact before adding a new one
   const lastCatFact = catFactsContainer.lastChild;
@@ -233,6 +353,36 @@ esButton.addEventListener("click", () => {
   esLangauge();
 });
 
+esButton.addEventListener("click", () => {
+  clicksCount++;
+  if (clicksCount == 1) {
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  } else if (clicksCount == 2) {
+    image.style.display = "none";
+    image2.style.display = "block";
+    image3.style.display = "none";
+  } else if (clicksCount == 3) {
+    image.style.display = "none";
+    image2.style.display = "none";
+    image3.style.display = "block";
+  } else {
+    clicksCount = 1;
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  }
+  console.log(clicksCount);
+});
+
+// cz
 function czLangauge() {
   // Remove the last cat fact before adding a new one
   const lastCatFact = catFactsContainer.lastChild;
@@ -256,7 +406,36 @@ function czLangauge() {
 czButton.addEventListener("click", () => {
   czLangauge();
 });
+czButton.addEventListener("click", () => {
+  clicksCount++;
+  if (clicksCount == 1) {
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  } else if (clicksCount == 2) {
+    image.style.display = "none";
+    image2.style.display = "block";
+    image3.style.display = "none";
+  } else if (clicksCount == 3) {
+    image.style.display = "none";
+    image2.style.display = "none";
+    image3.style.display = "block";
+  } else {
+    clicksCount = 1;
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  }
+  console.log(clicksCount);
+});
 
+// fl
 function flLangauge() {
   // Remove the last cat fact before adding a new one
   const lastCatFact = catFactsContainer.lastChild;
@@ -281,6 +460,36 @@ flButton.addEventListener("click", () => {
   flLangauge();
 });
 
+flButton.addEventListener("click", () => {
+  clicksCount++;
+  if (clicksCount == 1) {
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  } else if (clicksCount == 2) {
+    image.style.display = "none";
+    image2.style.display = "block";
+    image3.style.display = "none";
+  } else if (clicksCount == 3) {
+    image.style.display = "none";
+    image2.style.display = "none";
+    image3.style.display = "block";
+  } else {
+    clicksCount = 1;
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  }
+  console.log(clicksCount);
+});
+
+// urdu
 function urduLangauge() {
   // Remove the last cat fact before adding a new one
   const lastCatFact = catFactsContainer.lastChild;
@@ -303,4 +512,32 @@ function urduLangauge() {
 }
 urduButton.addEventListener("click", () => {
   urduLangauge();
+});
+urduButton.addEventListener("click", () => {
+  clicksCount++;
+  if (clicksCount == 1) {
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  } else if (clicksCount == 2) {
+    image.style.display = "none";
+    image2.style.display = "block";
+    image3.style.display = "none";
+  } else if (clicksCount == 3) {
+    image.style.display = "none";
+    image2.style.display = "none";
+    image3.style.display = "block";
+  } else {
+    clicksCount = 1;
+    fetchImage1();
+    fetchImage2();
+    fetchImage3();
+    image.style.display = "block";
+    image2.style.display = "none";
+    image3.style.display = "none";
+  }
+  console.log(clicksCount);
 });
