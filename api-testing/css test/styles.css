@@ -1,20 +1,22 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Risque&display=swap');
 
 body {
   background-color: beige;
+  font-family: "Risque",sans-serif;
+  color: white;
 }
 .container {
   background-color: rgb(163, 190, 192);
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  border: 1px solid red;
   width: 1200px;
 }
 
 .title {
+  font-size: 50px;
 }
 
 .image {
@@ -38,9 +40,23 @@ body {
   margin-top: 25px;
   font-size: 20px;
 }
+/* cat fact style text */
+.facts {
+  background-color: rgb(163, 190, 192);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 1200px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
 
-#cachedImage {
-  display: none;
+.catFact {
+  padding: 10px;
+  display: flex;
+  font-size: 30px;
+  height: auto;
 }
 
 /* media */

@@ -2,10 +2,10 @@ const button = document.querySelector(".btn");
 let image = document.querySelector(".image");
 let image2 = document.querySelector(".image2");
 let image3 = document.querySelector(".image3");
+const catFactsContainer = document.querySelector(".facts")
 
 const url = "https://aws.random.cat/meow";
 const cachedImage = document.querySelector("#cachedImage")
-const buttonTwo = document.querySelector(".button")
 let data1 = [];
 let data2 = [];
 let data3 = [];
@@ -13,6 +13,8 @@ let data3 = [];
 let clicksCount = 0;
 
 
+
+// get images
 function fetchImage1() {
 
   fetch(url)
@@ -46,7 +48,10 @@ function fetchImage3(){
   })
   .catch(err => console.error(err));
 }
-// upon load of the page
+
+// get facts
+
+
 
 // button click listener
 button.addEventListener("click", () => {
@@ -78,4 +83,29 @@ button.addEventListener("click", () => {
     }
     console.log(clicksCount);
 });
+button.addEventListener('click', () => {
+  let randomId = Math.floor(Math.random() * 90);
 
+  // Remove the last cat fact before adding a new one
+  const lastCatFact = catFactsContainer.lastChild;
+  if (lastCatFact && lastCatFact.classList.contains("catFact")) {
+    catFactsContainer.removeChild(lastCatFact);
+  }
+
+
+  function catFacts() {
+    fetch(`https://meowfacts.herokuapp.com/?id=${randomId}`)
+    .then(response => response.json())
+    .then(json => {
+      let facts = json;
+      console.log(facts.data[0]);
+      let catFactText = document.createElement('p');
+      catFactText.setAttribute('class', 'catFact')
+      catFactText.textContent = facts.data[0];
+      catFactsContainer.appendChild(catFactText);
+    })
+  }
+  catFacts();
+  catFactsContainer.removeChild(catFactText);
+
+});
