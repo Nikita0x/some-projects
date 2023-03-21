@@ -1,50 +1,5 @@
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-* {
-  margin: 0;
-}
-html,
-body {
-  height: 100%;
-}
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-#root,
-#__next {
-  isolation: isolate;
-}
+@import url("./css test/background.css");
+@import url("./css test/reset.css");
 
 body {
   background-color: beige;
@@ -68,10 +23,25 @@ body {
   width: 400px;
   cursor: pointer;
 }
-
+.image2 {
+  display: none;
+  border: 5px black solid;
+  width: 400px;
+  cursor: pointer;
+}
+.image3 {
+  display: none;
+  border: 5px black solid;
+  width: 400px;
+  cursor: pointer;
+}
 .btn {
   margin-top: 25px;
   font-size: 20px;
+}
+
+#cachedImage {
+  display: none;
 }
 
 /* media */
@@ -115,27 +85,4 @@ body {
     width: 300px;
     cursor: pointer;
   }
-}
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 850px) {
-  body {
-    background-color: rgb(163, 190, 192);
-  }
-  .container {
-    width: 850px;
-    height: auto;
-  }
-
-  .title {
-    font-size: 20px;
-  }
-
-  .image {
-    border: 5px black solid;
-    width: 300px;
-    cursor: pointer;
-  }
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
 }
