@@ -1,0 +1,118 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  background-color: steelblue;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 300px);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.grid__item {
+  position: relative;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.grid__item:hover {
+  background-color: rgb(158, 147, 147);
+  transform: scale(1.04);
+}
+
+img {
+  position: relative;
+  z-index: 0;
+}
+
+.grid__item::before {
+  content: "";
+  position: absolute;
+  background-image: url("https://i.ibb.co/5jdbH4m/secret.png");
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.health {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#heart {
+  width: 50px;
+  height: 50px;
+}
+
+/*# sourceMappingURL=style.css.map */

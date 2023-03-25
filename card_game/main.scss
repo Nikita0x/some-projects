@@ -1,0 +1,66 @@
+@import "dist/reset.scss";
+
+body {
+  background-color: steelblue;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+// header
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+// grid
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 300px);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.grid__item {
+  position: relative;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  //   hover
+}
+.grid__item:hover {
+  background-color: rgb(158, 147, 147);
+  transform: scale(1.04);
+}
+// images
+img {
+  position: relative;
+  z-index: 0;
+}
+
+// secret image
+.grid__item::before {
+  content: "";
+  position: absolute;
+  background-image: url("https://i.ibb.co/5jdbH4m/secret.png");
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+// heart image
+.health {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#heart {
+  width: 50px;
+  height: 50px;
+}
