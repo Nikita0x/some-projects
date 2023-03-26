@@ -5,21 +5,27 @@ let cards = document.querySelectorAll(".grid__item");
 // cardsImages
 const cardsImages = document.getElementsByClassName("cards__images");
 
+// new array images
+let newArray = [...cardsImages];
+let newArrayURLS = [];
+
+// new array IDs
+let cardsIds = [...cards];
+let cardIdsNew = [];
+
 // cards shown on click
 cards.forEach((card) => {
   card.addEventListener("click", (e) => {
     currentImageId = e.target.id;
     let cardsImagesCurrent = cardsImages[currentImageId - 1];
     cardsImagesCurrent.style.zIndex = "1";
-    console.log(currentImageId);
+    console.log(newArrayURLS[currentImageId]);
   });
 });
 
 // image randomizer on load
 window.addEventListener("load", () => {
   // images from HTML Collection to Array; then looping to retrieve URLS and store in newArrayURLS
-  let newArray = [...cardsImages];
-  let newArrayURLS = [];
 
   for (i = 0; i < newArray.length; i++) {
     let empty = newArray[i].src;
@@ -33,8 +39,6 @@ window.addEventListener("load", () => {
     return array;
   }
   shuffleArray(newArrayURLS);
-
-  console.log(cardsImages[0].src);
 
   for (i = 0; i < cardsImages.length; i++) {
     cardsImages[i].src = newArrayURLS[i];
