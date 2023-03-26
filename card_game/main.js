@@ -1,46 +1,94 @@
 // secret
 const secretImage = "https://i.ibb.co/5jdbH4m/secret.png";
 
-let cards = document.querySelectorAll(".grid__item");
 // cardsImages
 const cardsImages = document.getElementsByClassName("cards__images");
-
-// new array images
-let newArray = [...cardsImages];
-let newArrayURLS = [];
-
-// new array IDs
-let cardsIds = [...cards];
-let cardIdsNew = [];
-
-// cards shown on click
-cards.forEach((card) => {
-  card.addEventListener("click", (e) => {
-    currentImageId = e.target.id;
-    let cardsImagesCurrent = cardsImages[currentImageId - 1];
-    cardsImagesCurrent.style.zIndex = "1";
-    console.log(newArrayURLS[currentImageId]);
-  });
-});
-
-// image randomizer on load
+const imagesArray = [
+  "https://i.ibb.co/D8vZbWX/1.jpg",
+  "https://i.ibb.co/kGhKYyw/2.jpg",
+  "https://i.ibb.co/q1Xtp1D/3.jpg",
+  "https://i.ibb.co/5Tfxymp/4.jpg",
+  "https://i.ibb.co/BGHMNXX/5.jpg",
+  "https://i.ibb.co/XF8wZZD/6.jpg",
+  "https://i.ibb.co/kmSL353/7.jpg",
+  "https://i.ibb.co/096x08r/8.jpg",
+  "https://i.ibb.co/D8vZbWX/1.jpg",
+  "https://i.ibb.co/kGhKYyw/2.jpg",
+  "https://i.ibb.co/q1Xtp1D/3.jpg",
+  "https://i.ibb.co/5Tfxymp/4.jpg",
+  "https://i.ibb.co/BGHMNXX/5.jpg",
+  "https://i.ibb.co/XF8wZZD/6.jpg",
+  "https://i.ibb.co/kmSL353/7.jpg",
+  "https://i.ibb.co/096x08r/8.jpg",
+];
+// randomized images on load
 window.addEventListener("load", () => {
-  // images from HTML Collection to Array; then looping to retrieve URLS and store in newArrayURLS
+  function shuffle(array) {
+    let currentIndex = array.length,
+      randomIndex;
 
-  for (i = 0; i < newArray.length; i++) {
-    let empty = newArray[i].src;
-    newArrayURLS.push(empty);
-  }
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
     }
+
     return array;
   }
-  shuffleArray(newArrayURLS);
+
+  // Used like so
+  shuffle(imagesArray);
 
   for (i = 0; i < cardsImages.length; i++) {
-    cardsImages[i].src = newArrayURLS[i];
+    let src = cardsImages[i].setAttribute("src", imagesArray[i]);
   }
 });
+
+// game's logic
+let firstImage = "";
+let secondImage = "";
+let firstImageId = "";
+let secondImageId = "";
+
+for (let i = 0; i < cardsImages.length; i++) {
+  cardsImages[i].addEventListener("click", (e) => {
+    if (firstImage === "") {
+      firstImage = e.target.src;
+      // console.log(`first image is ${firstImage}`);
+      console.log("First Image");
+    } else {
+      secondImage = e.target.src;
+      // console.log(`second image is ${secondImage}`);
+      if (firstImage == secondImage) {
+        console.log("Match!");
+        firstImage = "";
+        secondImage = "";
+      } else {
+        console.log("images do not match!");
+        firstImage = "";
+        secondImage = "";
+      }
+    }
+  });
+  cardsImages[i].addEventListener("click", (e) => {
+    if (firstImageId === "") {
+      firstImageId = e.target.id;
+      // console.log(`first image id is ${firstImageId}`);
+    } else {
+      secondImageId = e.target.id;
+      // console.log(`second image id is ${secondImageId}`);
+      if (firstImageId == secondImageId) {
+        alert("You have to find the other card!");
+      }
+      firstImageId = "";
+      secondImageId = "";
+    }
+  });
+}
