@@ -48,6 +48,11 @@ img::before {
   width: 100%;
   z-index: 1;
 }
+// img highlighted if clicked
+.img__active {
+  border: 5px solid rgba(167, 215, 9, 0.929);
+  transition: border-color 0.5s ease-out;
+}
 
 // heart image
 .health {
