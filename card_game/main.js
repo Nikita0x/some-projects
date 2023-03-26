@@ -56,6 +56,12 @@ let firstImage = "";
 let secondImage = "";
 let firstImageId = "";
 let secondImageId = "";
+let firstCard = "";
+let firstCardId = "";
+let firstCardSrc = "";
+let secondCard = "";
+let secondCardId = "";
+let secondCardSrc = "";
 
 for (let i = 0; i < cardsImages.length; i++) {
   cardsImages[i].addEventListener("click", (e) => {
@@ -66,7 +72,7 @@ for (let i = 0; i < cardsImages.length; i++) {
     } else {
       secondImage = e.target.src;
       // console.log(`second image is ${secondImage}`);
-      if (firstImage == secondImage) {
+      if (firstImage === secondImage) {
         console.log("Match!");
         firstImage = "";
         secondImage = "";
@@ -84,11 +90,31 @@ for (let i = 0; i < cardsImages.length; i++) {
     } else {
       secondImageId = e.target.id;
       // console.log(`second image id is ${secondImageId}`);
-      if (firstImageId == secondImageId) {
+      if (firstImageId === secondImageId) {
         alert("You have to find the other card!");
       }
       firstImageId = "";
       secondImageId = "";
+    }
+  });
+  // if a match, matched cards are deleted
+  cardsImages[i].addEventListener("click", (e) => {
+    if (firstCard == "") {
+      firstCard = document.getElementById(e.target.id);
+      firstCardId = firstCard.getAttribute("id");
+      firstCardSrc = firstCard.getAttribute("src");
+      // console.log(firstCardId, firstCardSrc);
+    } else {
+      secondCard = document.getElementById(e.target.id);
+      secondCardId = secondCard.getAttribute("id");
+      secondCardSrc = secondCard.getAttribute("src");
+      // console.log(secondCardId, secondCardSrc);
+      if (firstCardSrc == secondCardSrc && firstCardId != secondCardId) {
+        firstCard.remove();
+        secondCard.remove();
+        firstCard = "";
+        secondCard = "";
+      }
     }
   });
 }
