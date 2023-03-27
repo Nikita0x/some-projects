@@ -88,21 +88,18 @@ img {
 
 img:hover {
   background-color: rgb(158, 147, 147);
-  transform: scale(1.04);
+  transform: scale(1.02);
 }
 
-img::before {
-  content: "";
-  position: absolute;
-  background-image: url("https://i.ibb.co/5jdbH4m/secret.png");
-  height: 100%;
-  width: 100%;
-  z-index: 1;
+.div__wrapper {
+  border: 3px solid black;
+  margin-bottom: 3px;
 }
 
 .img__active {
   border: 5px solid rgba(167, 215, 9, 0.929);
-  transition: border-color 0.5s ease-out;
+  transition: transform border-color 0.5s ease-out;
+  transform: scale(1.04);
 }
 
 .health {

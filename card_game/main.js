@@ -21,22 +21,23 @@ const imagesArray = [
   "https://i.ibb.co/kmSL353/zebra.jpg",
   "https://i.ibb.co/SBVqKCw/zebra.jpg",
 ];
+const divs = document.getElementsByClassName("div__wrapper");
 // randomized images on load
 window.addEventListener("load", () => {
   function shuffle(array) {
-    let currentIndex = array.length,
+    let currentIndex = array.length - 1,
       randomIndex;
 
     // While there remain elements to shuffle.
-    while (currentIndex != 0) {
+    while (currentIndex != 1) {
       // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
+      randomIndex = Math.floor(Math.random() * currentIndex) + 1;
       currentIndex--;
 
       // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
+      [array[currentIndex + 1], array[randomIndex]] = [
         array[randomIndex],
-        array[currentIndex],
+        array[currentIndex + 1],
       ];
     }
 
@@ -45,9 +46,11 @@ window.addEventListener("load", () => {
 
   // Used like so
   shuffle(imagesArray);
+  console.log("Shuffled array: ", imagesArray);
 
   for (i = 0; i < cardsImages.length; i++) {
-    let src = cardsImages[i].setAttribute("src", imagesArray[i]);
+    cardsImages[i].setAttribute("src", imagesArray[i]);
+    // cardsImages[i].setAttribute("id", `img${i}`);
   }
 });
 
@@ -61,7 +64,7 @@ let secondCardSrc = "";
 
 for (let i = 0; i < cardsImages.length; i++) {
   cardsImages[i].addEventListener("click", (e) => {
-    // console.log(e.target.src.includes("monkey"));
+    console.log("Clicked image: ", e.target);
     if (firstCard == "") {
       firstCard = document.getElementById(e.target.id);
       firstCardId = firstCard.getAttribute("id");
@@ -77,7 +80,7 @@ for (let i = 0; i < cardsImages.length; i++) {
       // works
       // alert if clicked the same card + reset
       if (firstCardId === secondCardId) {
-        console.log("You have to find the other card!");
+        alert("You have to find the other card!");
         firstCard.classList.remove("img__active");
         firstCard = "";
         // works
@@ -118,6 +121,10 @@ for (let i = 0; i < cardsImages.length; i++) {
             secondCard.remove();
             firstCard = "";
             secondCard = "";
+            if (firstCard || secondCard == null) {
+              firstCard = "";
+              secondCard = "";
+            }
           } else {
             firstCard.classList.remove("img__active");
             firstCard = "";
@@ -132,6 +139,10 @@ for (let i = 0; i < cardsImages.length; i++) {
             secondCard.remove();
             firstCard = "";
             secondCard = "";
+            if (firstCard || secondCard == null) {
+              firstCard = "";
+              secondCard = "";
+            }
           } else {
             firstCard.classList.remove("img__active");
             firstCard = "";
@@ -146,6 +157,10 @@ for (let i = 0; i < cardsImages.length; i++) {
             secondCard.remove();
             firstCard = "";
             secondCard = "";
+            if (firstCard || secondCard == null) {
+              firstCard = "";
+              secondCard = "";
+            }
           } else {
             firstCard.classList.remove("img__active");
             firstCard = "";
@@ -160,6 +175,10 @@ for (let i = 0; i < cardsImages.length; i++) {
             secondCard.remove();
             firstCard = "";
             secondCard = "";
+            if (firstCard || secondCard == null) {
+              firstCard = "";
+              secondCard = "";
+            }
           } else {
             firstCard.classList.remove("img__active");
             firstCard = "";
@@ -174,6 +193,10 @@ for (let i = 0; i < cardsImages.length; i++) {
             secondCard.remove();
             firstCard = "";
             secondCard = "";
+            if (firstCard || secondCard == null) {
+              firstCard = "";
+              secondCard = "";
+            }
           } else {
             firstCard.classList.remove("img__active");
             firstCard = "";
@@ -188,6 +211,10 @@ for (let i = 0; i < cardsImages.length; i++) {
             secondCard.remove();
             firstCard = "";
             secondCard = "";
+            if (firstCard || secondCard == null) {
+              firstCard = "";
+              secondCard = "";
+            }
           } else {
             firstCard.classList.remove("img__active");
             firstCard = "";
