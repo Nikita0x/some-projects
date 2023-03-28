@@ -102,6 +102,20 @@ img:hover {
   transform: scale(1.04);
 }
 
+.img__wrong {
+  border: 5px solid rgba(178, 18, 15, 0.929) !important;
+  transition: transform border-color 0.5s ease-out;
+  transform: scale(1.04);
+  margin-bottom: 5px;
+}
+
+.img__matched {
+  border: 10px solid rgba(20, 154, 11, 0.929) !important;
+  transition: transform border-color 0.5s ease-out;
+  transform: scale(1.04);
+  margin-bottom: 12px;
+}
+
 .health {
   display: flex;
   justify-content: center;

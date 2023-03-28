@@ -1,6 +1,5 @@
-// secret
-const secretImage = "https://i.ibb.co/5jdbH4m/secret.png";
-
+const score = document.getElementById("score");
+let scoreCounter = 0;
 // cardsImages
 const cardsImages = document.getElementsByClassName("cards__images");
 const imagesArray = [
@@ -50,179 +49,234 @@ window.addEventListener("load", () => {
 
   for (i = 0; i < cardsImages.length; i++) {
     cardsImages[i].setAttribute("src", imagesArray[i]);
-    // cardsImages[i].setAttribute("id", `img${i}`);
+    divs[i].setAttribute("src", imagesArray[i]);
+    cardsImages[i].style.display = "none";
   }
 });
 
-// game's logic
-let firstCard = "";
-let firstCardId = "";
-let firstCardSrc = "";
-let secondCard = "";
-let secondCardId = "";
-let secondCardSrc = "";
+// logic for divs
 
-for (let i = 0; i < cardsImages.length; i++) {
-  cardsImages[i].addEventListener("click", (e) => {
-    console.log("Clicked image: ", e.target);
-    if (firstCard == "") {
-      firstCard = document.getElementById(e.target.id);
-      firstCardId = firstCard.getAttribute("id");
-      firstCardSrc = firstCard.getAttribute("src");
-      console.log(`first card ${firstCardId},${firstCardSrc}`);
-      firstCard.classList.add("img__active");
-      // works
+let firstDiv = "";
+let firstDivSrc = firstDiv.src;
+let firstDivChild = "";
+let firstDivChildSrc = "";
+
+let secondDiv = "";
+let secondDivSrc = secondDiv.src;
+let secondDivChildSrc = "";
+let secondDivChild = "";
+
+for (let i = 0; i < divs.length; i++) {
+  divs[i].addEventListener("click", (e) => {
+    if (firstDiv == "") {
+      firstDiv = e.target;
+      let firstDivSrc = firstDiv.getAttribute("src");
+      firstDivChild = firstDiv.children[0];
+      firstDivChildSrc = firstDivChild.src;
+      firstDivChild.style.display = "block";
+      firstDivChild.classList.add("img__active");
+      // console.log(`firstDivSrc = ${firstDivSrc}`);
+      // console.log(`firstDivChildSrc = ${firstDivChildSrc}`);
     } else {
-      secondCard = document.getElementById(e.target.id);
-      secondCardId = secondCard.getAttribute("id");
-      secondCardSrc = secondCard.getAttribute("src");
-      console.log(`second card ${secondCardId},${secondCardSrc}`);
-      // works
-      // alert if clicked the same card + reset
-      if (firstCardId === secondCardId) {
-        alert("You have to find the other card!");
-        firstCard.classList.remove("img__active");
-        firstCard = "";
-        // works
+      secondDiv = e.target;
+      let firstDivSrc = firstDiv.getAttribute("src");
+      let secondDivSrc = secondDiv.getAttribute("src");
+      console.log(firstDivSrc, secondDivSrc);
+      if (firstDivSrc == secondDivSrc) {
+        alert("You have to find the other image!");
+        firstDivChild.style.display = "none";
+        firstDiv = "";
+        secondDiv = "";
       } else {
-        // check if images are cats
-        if (firstCardSrc.includes("cat")) {
-          if (secondCardSrc.includes("cat")) {
-            firstCard.classList.remove("img__active");
-            firstCard.remove();
-            secondCard.remove();
-            firstCard = "";
-            secondCard = "";
+        // if images are not the same
+        if (firstDivSrc.includes("cat")) {
+          if (secondDivSrc.includes("cat")) {
+            console.log("it is a match!");
+            scoreCounter++;
+            score.innerText = `Score: ${scoreCounter}`;
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            firstDiv.classList.add("img__matched");
+            secondDiv.classList.add("img__matched");
+            setTimeout(function () {
+              firstDiv.remove();
+              secondDiv.remove();
+              firstDiv = "";
+              secondDiv = "";
+            }, 3000);
           } else {
-            firstCard.classList.remove("img__active");
-            firstCard = "";
-            secondCard = "";
-          }
-        }
-        // check if images are dog
-        if (firstCardSrc.includes("dog")) {
-          if (secondCardSrc.includes("dog")) {
-            firstCard.classList.remove("img__active");
-            firstCard.remove();
-            secondCard.remove();
-            firstCard = "";
-            secondCard = "";
-          } else {
-            firstCard.classList.remove("img__active");
-            firstCard = "";
-            secondCard = "";
-          }
-        }
-        // check if images are elephant
-        if (firstCardSrc.includes("elephant")) {
-          if (secondCardSrc.includes("elephant")) {
-            firstCard.classList.remove("img__active");
-            firstCard.remove();
-            secondCard.remove();
-            firstCard = "";
-            secondCard = "";
-            if (firstCard || secondCard == null) {
-              firstCard = "";
-              secondCard = "";
-            }
-          } else {
-            firstCard.classList.remove("img__active");
-            firstCard = "";
-            secondCard = "";
-          }
-        }
-        // check if images are horse
-        if (firstCardSrc.includes("horse")) {
-          if (secondCardSrc.includes("horse")) {
-            firstCard.classList.remove("img__active");
-            firstCard.remove();
-            secondCard.remove();
-            firstCard = "";
-            secondCard = "";
-            if (firstCard || secondCard == null) {
-              firstCard = "";
-              secondCard = "";
-            }
-          } else {
-            firstCard.classList.remove("img__active");
-            firstCard = "";
-            secondCard = "";
-          }
-        }
-        // check if images are kangaroos
-        if (firstCardSrc.includes("kangaroo")) {
-          if (secondCardSrc.includes("kangaroo")) {
-            firstCard.classList.remove("img__active");
-            firstCard.remove();
-            secondCard.remove();
-            firstCard = "";
-            secondCard = "";
-            if (firstCard || secondCard == null) {
-              firstCard = "";
-              secondCard = "";
-            }
-          } else {
-            firstCard.classList.remove("img__active");
-            firstCard = "";
-            secondCard = "";
-          }
-        }
-        // check if images are monkeys
-        if (firstCardSrc.includes("monkey")) {
-          if (secondCardSrc.includes("monkey")) {
-            firstCard.classList.remove("img__active");
-            firstCard.remove();
-            secondCard.remove();
-            firstCard = "";
-            secondCard = "";
-            if (firstCard || secondCard == null) {
-              firstCard = "";
-              secondCard = "";
-            }
-          } else {
-            firstCard.classList.remove("img__active");
-            firstCard = "";
-            secondCard = "";
-          }
-        }
-        // check if images are parrots
-        if (firstCardSrc.includes("parrot")) {
-          if (secondCardSrc.includes("parrot")) {
-            firstCard.classList.remove("img__active");
-            firstCard.remove();
-            secondCard.remove();
-            firstCard = "";
-            secondCard = "";
-            if (firstCard || secondCard == null) {
-              firstCard = "";
-              secondCard = "";
-            }
-          } else {
-            firstCard.classList.remove("img__active");
-            firstCard = "";
-            secondCard = "";
-          }
-        }
-        // check if images are zebras
-        if (firstCardSrc.includes("zebra")) {
-          if (secondCardSrc.includes("zebra")) {
-            firstCard.classList.remove("img__active");
-            firstCard.remove();
-            secondCard.remove();
-            firstCard = "";
-            secondCard = "";
-            if (firstCard || secondCard == null) {
-              firstCard = "";
-              secondCard = "";
-            }
-          } else {
-            firstCard.classList.remove("img__active");
-            firstCard = "";
-            secondCard = "";
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            secondDiv.classList.add("img__wrong");
+            console.log("images do not match!");
+            setTimeout(function () {
+              secondDivChild.style.display = "none";
+              secondDiv.classList.remove("img__wrong");
+              firstDivChild.style.display = "none";
+              firstDiv.classList.remove("img__active");
+              firstDiv = "";
+              secondDiv = "";
+            }, 1500);
           }
         }
       }
-      // works
+      // console.log(`secondDivSrc = ${secondDivSrc}`);
+      // console.log(`secondDivChildSrc = ${secondDivChildSrc}`);
     }
   });
 }
+
+// for (let i = 0; i < cardsImages.length; i++) {
+//   cardsImages[i].addEventListener("click", (e) => {
+//     if (firstCard == "") {
+//       e.stopPropagation();
+
+//       firstCard = document.getElementById(e.target.id);
+//       firstCardId = firstCard.getAttribute("id");
+//       firstCardSrc = firstCard.getAttribute("src");
+//       console.log(`first card ${firstCardId},${firstCardSrc}`);
+//       firstCard.classList.add("img__active");
+//       // works
+//     } else {
+//       e.stopPropagation();
+
+//       secondCard = document.getElementById(e.target.id);
+//       secondCardId = secondCard.getAttribute("id");
+//       secondCardSrc = secondCard.getAttribute("src");
+//       console.log(`second card ${secondCardId},${secondCardSrc}`);
+//       // works
+//       // alert if clicked the same card + reset
+//       if (firstCardId === secondCardId) {
+//         alert("You have to find the other card!");
+//         firstCard.classList.remove("img__active");
+//         firstCard.style.display = "none";
+//         firstCard = "";
+//         // works
+//       } else {
+//         // check if images are cats
+//         if (firstCardSrc.includes("cat")) {
+//           if (secondCardSrc.includes("cat")) {
+//             console.log("It is a match!");
+//             firstCard.parentNode.remove();
+//             secondCard.parentNode.remove();
+//             firstCard = "";
+//             secondCard = "";
+//             div = "";
+//           } else {
+//             console.log(firstCard);
+//             firstCard.style.display = "none";
+//             secondCard.style.display = "none";
+//             firstCard = "";
+//             secondCard = "";
+//           }
+//         }
+//         // check if images are dog
+//         if (firstCardSrc.includes("dog")) {
+//           if (secondCardSrc.includes("dog")) {
+//             console.log("It is a match!");
+//             firstCard.parentNode.remove();
+//             secondCard.parentNode.remove();
+//             firstCard = "";
+//             secondCard = "";
+//           } else {
+//             firstCard.style.display = "none";
+//             secondCard.style.display = "none";
+//             firstCard = "";
+//             secondCard = "";
+//           }
+//         }
+//         // check if images are elephant
+//         if (firstCardSrc.includes("elephant")) {
+//           if (secondCardSrc.includes("elephant")) {
+//             console.log("It is a match!");
+//             firstCard.parentNode.remove();
+//             secondCard.parentNode.remove();
+//             firstCard = "";
+//             secondCard = "";
+//           }
+//         } else {
+//           firstCard.style.display = "none";
+//           secondCard.style.display = "none";
+//           firstCard = "";
+//           secondCard = "";
+//         }
+//       }
+//       // check if images are horse
+//       if (firstCardSrc.includes("horse")) {
+//         if (secondCardSrc.includes("horse")) {
+//           console.log("It is a match!");
+//           firstCard.parentNode.remove();
+//           secondCard.parentNode.remove();
+//           firstCard = "";
+//           secondCard = "";
+//         } else {
+//           firstCard.style.display = "none";
+//           secondCard.style.display = "none";
+//           firstCard = "";
+//           secondCard = "";
+//         }
+//       }
+//       // check if images are kangaroos
+//       if (firstCardSrc.includes("kangaroo")) {
+//         if (secondCardSrc.includes("kangaroo")) {
+//           console.log("It is a match!");
+//           firstCard.parentNode.remove();
+//           secondCard.parentNode.remove();
+//           firstCard = "";
+//           secondCard = "";
+//         } else {
+//           firstCard.style.display = "none";
+//           secondCard.style.display = "none";
+//           firstCard = "";
+//           secondCard = "";
+//         }
+//       }
+//       // check if images are monkeys
+//       if (firstCardSrc.includes("monkey")) {
+//         if (secondCardSrc.includes("monkey")) {
+//           console.log("It is a match!");
+//           firstCard.parentNode.remove();
+//           secondCard.parentNode.remove();
+//           firstCard = "";
+//           secondCard = "";
+//         } else {
+//           firstCard.style.display = "none";
+//           secondCard.style.display = "none";
+//           firstCard = "";
+//           secondCard = "";
+//         }
+//       }
+//       // check if images are parrots
+//       if (firstCardSrc.includes("parrot")) {
+//         if (secondCardSrc.includes("parrot")) {
+//           console.log("It is a match!");
+//           firstCard.parentNode.remove();
+//           secondCard.parentNode.remove();
+//           firstCard = "";
+//           secondCard = "";
+//         } else {
+//           firstCard.style.display = "none";
+//           secondCard.style.display = "none";
+//           firstCard = "";
+//           secondCard = "";
+//         }
+//       }
+//       // check if images are zebras
+//       if (firstCardSrc.includes("zebra")) {
+//         if (secondCardSrc.includes("zebra")) {
+//           console.log("It is a match!");
+//           firstCard.parentNode.remove();
+//           secondCard.parentNode.remove();
+//           firstCard = "";
+//           secondCard = "";
+//         } else {
+//           firstCard.style.display = "none";
+//           secondCard.style.display = "none";
+//           firstCard = "";
+//           secondCard = "";
+//         }
+//       }
+//       // works
+//     }
+//   });
+// }
