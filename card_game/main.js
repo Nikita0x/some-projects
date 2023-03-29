@@ -1,5 +1,6 @@
 const score = document.getElementById("score");
 let scoreCounter = 0;
+
 // cardsImages
 const cardsImages = document.getElementsByClassName("cards__images");
 const imagesArray = [
@@ -89,6 +90,8 @@ for (let i = 0; i < divs.length; i++) {
         secondDiv = "";
       } else {
         // if images are not the same
+        // cats
+
         if (firstDivSrc.includes("cat")) {
           if (secondDivSrc.includes("cat")) {
             console.log("it is a match!");
@@ -96,19 +99,22 @@ for (let i = 0; i < divs.length; i++) {
             score.innerText = `Score: ${scoreCounter}`;
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            firstDiv.classList.add("img__matched");
+            firstDiv.classList.replace("img__active", "img__matched");
             secondDiv.classList.add("img__matched");
+            divsNotClickable();
             setTimeout(function () {
               firstDiv.remove();
               secondDiv.remove();
               firstDiv = "";
               secondDiv = "";
-            }, 3000);
+              divsClickable();
+            }, 1700);
           } else {
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
             secondDiv.classList.add("img__wrong");
             console.log("images do not match!");
+            divsNotClickable();
             setTimeout(function () {
               secondDivChild.style.display = "none";
               secondDiv.classList.remove("img__wrong");
@@ -116,167 +122,269 @@ for (let i = 0; i < divs.length; i++) {
               firstDiv.classList.remove("img__active");
               firstDiv = "";
               secondDiv = "";
+              divsClickable();
+            }, 1500);
+          }
+        }
+        // dogs
+        if (firstDivSrc.includes("dog")) {
+          if (secondDivSrc.includes("dog")) {
+            console.log("it is a match!");
+            scoreCounter++;
+            score.innerText = `Score: ${scoreCounter}`;
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            firstDiv.classList.replace("img__active", "img__matched");
+            secondDiv.classList.add("img__matched");
+            divsNotClickable();
+            setTimeout(function () {
+              firstDiv.remove();
+              secondDiv.remove();
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1700);
+          } else {
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            secondDiv.classList.add("img__wrong");
+            console.log("images do not match!");
+            divsNotClickable();
+            setTimeout(function () {
+              secondDivChild.style.display = "none";
+              secondDiv.classList.remove("img__wrong");
+              firstDivChild.style.display = "none";
+              firstDiv.classList.remove("img__active");
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1500);
+          }
+        }
+        // elephant
+        if (firstDivSrc.includes("elephant")) {
+          if (secondDivSrc.includes("elephant")) {
+            console.log("it is a match!");
+            scoreCounter++;
+            score.innerText = `Score: ${scoreCounter}`;
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            firstDiv.classList.replace("img__active", "img__matched");
+            secondDiv.classList.add("img__matched");
+            divsNotClickable();
+            setTimeout(function () {
+              firstDiv.remove();
+              secondDiv.remove();
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1700);
+          } else {
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            secondDiv.classList.add("img__wrong");
+            console.log("images do not match!");
+            divsNotClickable();
+            setTimeout(function () {
+              secondDivChild.style.display = "none";
+              secondDiv.classList.remove("img__wrong");
+              firstDivChild.style.display = "none";
+              firstDiv.classList.remove("img__active");
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1500);
+          }
+        }
+        // horse
+        if (firstDivSrc.includes("horse")) {
+          if (secondDivSrc.includes("horse")) {
+            console.log("it is a match!");
+            scoreCounter++;
+            score.innerText = `Score: ${scoreCounter}`;
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            firstDiv.classList.replace("img__active", "img__matched");
+            secondDiv.classList.add("img__matched");
+            divsNotClickable();
+            setTimeout(function () {
+              firstDiv.remove();
+              secondDiv.remove();
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1700);
+          } else {
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            secondDiv.classList.add("img__wrong");
+            console.log("images do not match!");
+            divsNotClickable();
+            setTimeout(function () {
+              secondDivChild.style.display = "none";
+              secondDiv.classList.remove("img__wrong");
+              firstDivChild.style.display = "none";
+              firstDiv.classList.remove("img__active");
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1500);
+          }
+        }
+        // kangaroos
+        if (firstDivSrc.includes("kangaroo")) {
+          if (secondDivSrc.includes("kangaroo")) {
+            console.log("it is a match!");
+            scoreCounter++;
+            score.innerText = `Score: ${scoreCounter}`;
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            firstDiv.classList.replace("img__active", "img__matched");
+            secondDiv.classList.add("img__matched");
+            divsNotClickable();
+            setTimeout(function () {
+              firstDiv.remove();
+              secondDiv.remove();
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1700);
+          } else {
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            secondDiv.classList.add("img__wrong");
+            console.log("images do not match!");
+            divsNotClickable();
+            setTimeout(function () {
+              secondDivChild.style.display = "none";
+              secondDiv.classList.remove("img__wrong");
+              firstDivChild.style.display = "none";
+              firstDiv.classList.remove("img__active");
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1500);
+          }
+        }
+        // monkeys
+        if (firstDivSrc.includes("monkey")) {
+          if (secondDivSrc.includes("monkey")) {
+            console.log("it is a match!");
+            scoreCounter++;
+            score.innerText = `Score: ${scoreCounter}`;
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            firstDiv.classList.replace("img__active", "img__matched");
+            secondDiv.classList.add("img__matched");
+            divsNotClickable();
+            setTimeout(function () {
+              firstDiv.remove();
+              secondDiv.remove();
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1700);
+          } else {
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            secondDiv.classList.add("img__wrong");
+            console.log("images do not match!");
+            divsNotClickable();
+            setTimeout(function () {
+              secondDivChild.style.display = "none";
+              secondDiv.classList.remove("img__wrong");
+              firstDivChild.style.display = "none";
+              firstDiv.classList.remove("img__active");
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1500);
+          }
+        }
+        // parrots
+        if (firstDivSrc.includes("parrot")) {
+          if (secondDivSrc.includes("parrot")) {
+            console.log("it is a match!");
+            scoreCounter++;
+            score.innerText = `Score: ${scoreCounter}`;
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            firstDiv.classList.replace("img__active", "img__matched");
+            secondDiv.classList.add("img__matched");
+            divsNotClickable();
+            setTimeout(function () {
+              firstDiv.remove();
+              secondDiv.remove();
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1700);
+          } else {
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            secondDiv.classList.add("img__wrong");
+            console.log("images do not match!");
+            divsNotClickable();
+            setTimeout(function () {
+              secondDivChild.style.display = "none";
+              secondDiv.classList.remove("img__wrong");
+              firstDivChild.style.display = "none";
+              firstDiv.classList.remove("img__active");
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1500);
+          }
+        }
+        // zebras
+        if (firstDivSrc.includes("zebra")) {
+          if (secondDivSrc.includes("zebra")) {
+            console.log("it is a match!");
+            scoreCounter++;
+            score.innerText = `Score: ${scoreCounter}`;
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            firstDiv.classList.replace("img__active", "img__matched");
+            secondDiv.classList.add("img__matched");
+            divsNotClickable();
+            setTimeout(function () {
+              firstDiv.remove();
+              secondDiv.remove();
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
+            }, 1700);
+          } else {
+            let secondDivChild = secondDiv.children[0];
+            secondDivChild.style.display = "block";
+            secondDiv.classList.add("img__wrong");
+            console.log("images do not match!");
+            divsNotClickable();
+            setTimeout(function () {
+              secondDivChild.style.display = "none";
+              secondDiv.classList.remove("img__wrong");
+              firstDivChild.style.display = "none";
+              firstDiv.classList.remove("img__active");
+              firstDiv = "";
+              secondDiv = "";
+              divsClickable();
             }, 1500);
           }
         }
       }
-      // console.log(`secondDivSrc = ${secondDivSrc}`);
-      // console.log(`secondDivChildSrc = ${secondDivChildSrc}`);
     }
   });
 }
 
-// for (let i = 0; i < cardsImages.length; i++) {
-//   cardsImages[i].addEventListener("click", (e) => {
-//     if (firstCard == "") {
-//       e.stopPropagation();
-
-//       firstCard = document.getElementById(e.target.id);
-//       firstCardId = firstCard.getAttribute("id");
-//       firstCardSrc = firstCard.getAttribute("src");
-//       console.log(`first card ${firstCardId},${firstCardSrc}`);
-//       firstCard.classList.add("img__active");
-//       // works
-//     } else {
-//       e.stopPropagation();
-
-//       secondCard = document.getElementById(e.target.id);
-//       secondCardId = secondCard.getAttribute("id");
-//       secondCardSrc = secondCard.getAttribute("src");
-//       console.log(`second card ${secondCardId},${secondCardSrc}`);
-//       // works
-//       // alert if clicked the same card + reset
-//       if (firstCardId === secondCardId) {
-//         alert("You have to find the other card!");
-//         firstCard.classList.remove("img__active");
-//         firstCard.style.display = "none";
-//         firstCard = "";
-//         // works
-//       } else {
-//         // check if images are cats
-//         if (firstCardSrc.includes("cat")) {
-//           if (secondCardSrc.includes("cat")) {
-//             console.log("It is a match!");
-//             firstCard.parentNode.remove();
-//             secondCard.parentNode.remove();
-//             firstCard = "";
-//             secondCard = "";
-//             div = "";
-//           } else {
-//             console.log(firstCard);
-//             firstCard.style.display = "none";
-//             secondCard.style.display = "none";
-//             firstCard = "";
-//             secondCard = "";
-//           }
-//         }
-//         // check if images are dog
-//         if (firstCardSrc.includes("dog")) {
-//           if (secondCardSrc.includes("dog")) {
-//             console.log("It is a match!");
-//             firstCard.parentNode.remove();
-//             secondCard.parentNode.remove();
-//             firstCard = "";
-//             secondCard = "";
-//           } else {
-//             firstCard.style.display = "none";
-//             secondCard.style.display = "none";
-//             firstCard = "";
-//             secondCard = "";
-//           }
-//         }
-//         // check if images are elephant
-//         if (firstCardSrc.includes("elephant")) {
-//           if (secondCardSrc.includes("elephant")) {
-//             console.log("It is a match!");
-//             firstCard.parentNode.remove();
-//             secondCard.parentNode.remove();
-//             firstCard = "";
-//             secondCard = "";
-//           }
-//         } else {
-//           firstCard.style.display = "none";
-//           secondCard.style.display = "none";
-//           firstCard = "";
-//           secondCard = "";
-//         }
-//       }
-//       // check if images are horse
-//       if (firstCardSrc.includes("horse")) {
-//         if (secondCardSrc.includes("horse")) {
-//           console.log("It is a match!");
-//           firstCard.parentNode.remove();
-//           secondCard.parentNode.remove();
-//           firstCard = "";
-//           secondCard = "";
-//         } else {
-//           firstCard.style.display = "none";
-//           secondCard.style.display = "none";
-//           firstCard = "";
-//           secondCard = "";
-//         }
-//       }
-//       // check if images are kangaroos
-//       if (firstCardSrc.includes("kangaroo")) {
-//         if (secondCardSrc.includes("kangaroo")) {
-//           console.log("It is a match!");
-//           firstCard.parentNode.remove();
-//           secondCard.parentNode.remove();
-//           firstCard = "";
-//           secondCard = "";
-//         } else {
-//           firstCard.style.display = "none";
-//           secondCard.style.display = "none";
-//           firstCard = "";
-//           secondCard = "";
-//         }
-//       }
-//       // check if images are monkeys
-//       if (firstCardSrc.includes("monkey")) {
-//         if (secondCardSrc.includes("monkey")) {
-//           console.log("It is a match!");
-//           firstCard.parentNode.remove();
-//           secondCard.parentNode.remove();
-//           firstCard = "";
-//           secondCard = "";
-//         } else {
-//           firstCard.style.display = "none";
-//           secondCard.style.display = "none";
-//           firstCard = "";
-//           secondCard = "";
-//         }
-//       }
-//       // check if images are parrots
-//       if (firstCardSrc.includes("parrot")) {
-//         if (secondCardSrc.includes("parrot")) {
-//           console.log("It is a match!");
-//           firstCard.parentNode.remove();
-//           secondCard.parentNode.remove();
-//           firstCard = "";
-//           secondCard = "";
-//         } else {
-//           firstCard.style.display = "none";
-//           secondCard.style.display = "none";
-//           firstCard = "";
-//           secondCard = "";
-//         }
-//       }
-//       // check if images are zebras
-//       if (firstCardSrc.includes("zebra")) {
-//         if (secondCardSrc.includes("zebra")) {
-//           console.log("It is a match!");
-//           firstCard.parentNode.remove();
-//           secondCard.parentNode.remove();
-//           firstCard = "";
-//           secondCard = "";
-//         } else {
-//           firstCard.style.display = "none";
-//           secondCard.style.display = "none";
-//           firstCard = "";
-//           secondCard = "";
-//         }
-//       }
-//       // works
-//     }
-//   });
-// }
+// divs not clickable
+function divsNotClickable() {
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].classList.add("disabled");
+  }
+}
+// divs clickable
+function divsClickable() {
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].classList.remove("disabled");
+  }
+}
