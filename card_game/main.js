@@ -51,6 +51,8 @@ window.addEventListener("load", () => {
   for (i = 0; i < cardsImages.length; i++) {
     cardsImages[i].setAttribute("src", imagesArray[i]);
     divs[i].setAttribute("src", imagesArray[i]);
+    divs[i].style.cursor = "pointer";
+    cardsImages[i].classList.add("img__active");
     cardsImages[i].style.display = "none";
   }
 });
@@ -75,7 +77,6 @@ for (let i = 0; i < divs.length; i++) {
       firstDivChild = firstDiv.children[0];
       firstDivChildSrc = firstDivChild.src;
       firstDivChild.style.display = "block";
-      firstDivChild.classList.add("img__active");
       // console.log(`firstDivSrc = ${firstDivSrc}`);
       // console.log(`firstDivChildSrc = ${firstDivChildSrc}`);
     } else {
@@ -99,8 +100,8 @@ for (let i = 0; i < divs.length; i++) {
             score.innerText = `Score: ${scoreCounter}`;
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            firstDiv.classList.replace("img__active", "img__matched");
-            secondDiv.classList.add("img__matched");
+            firstDivChild.classList.replace("img__active", "img__matched");
+            secondDivChild.classList.replace("img__active", "img__matched");
             divsNotClickable();
             setTimeout(function () {
               firstDiv.remove();
@@ -112,14 +113,16 @@ for (let i = 0; i < divs.length; i++) {
           } else {
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            secondDiv.classList.add("img__wrong");
+
             console.log("images do not match!");
             divsNotClickable();
+            secondDivChild.classList.replace("img__active", "img__wrong");
             setTimeout(function () {
               secondDivChild.style.display = "none";
-              secondDiv.classList.remove("img__wrong");
+              secondDivChild.classList.replace("img__wrong", "img__active");
+
               firstDivChild.style.display = "none";
-              firstDiv.classList.remove("img__active");
+
               firstDiv = "";
               secondDiv = "";
               divsClickable();
@@ -134,8 +137,8 @@ for (let i = 0; i < divs.length; i++) {
             score.innerText = `Score: ${scoreCounter}`;
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            firstDiv.classList.replace("img__active", "img__matched");
-            secondDiv.classList.add("img__matched");
+            firstDivChild.classList.replace("img__active", "img__matched");
+            secondDivChild.classList.replace("img__active", "img__matched");
             divsNotClickable();
             setTimeout(function () {
               firstDiv.remove();
@@ -147,14 +150,15 @@ for (let i = 0; i < divs.length; i++) {
           } else {
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            secondDiv.classList.add("img__wrong");
+
             console.log("images do not match!");
             divsNotClickable();
+            secondDivChild.classList.replace("img__active", "img__wrong");
             setTimeout(function () {
               secondDivChild.style.display = "none";
-              secondDiv.classList.remove("img__wrong");
+              secondDivChild.classList.replace("img__wrong", "img__active");
               firstDivChild.style.display = "none";
-              firstDiv.classList.remove("img__active");
+
               firstDiv = "";
               secondDiv = "";
               divsClickable();
@@ -169,8 +173,8 @@ for (let i = 0; i < divs.length; i++) {
             score.innerText = `Score: ${scoreCounter}`;
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            firstDiv.classList.replace("img__active", "img__matched");
-            secondDiv.classList.add("img__matched");
+            firstDivChild.classList.replace("img__active", "img__matched");
+            secondDivChild.classList.replace("img__active", "img__matched");
             divsNotClickable();
             setTimeout(function () {
               firstDiv.remove();
@@ -182,14 +186,17 @@ for (let i = 0; i < divs.length; i++) {
           } else {
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            secondDiv.classList.add("img__wrong");
+
             console.log("images do not match!");
             divsNotClickable();
+            secondDivChild.classList.replace("img__active", "img__wrong");
+
             setTimeout(function () {
               secondDivChild.style.display = "none";
-              secondDiv.classList.remove("img__wrong");
+              secondDivChild.classList.replace("img__wrong", "img__active");
+
               firstDivChild.style.display = "none";
-              firstDiv.classList.remove("img__active");
+
               firstDiv = "";
               secondDiv = "";
               divsClickable();
@@ -204,8 +211,8 @@ for (let i = 0; i < divs.length; i++) {
             score.innerText = `Score: ${scoreCounter}`;
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            firstDiv.classList.replace("img__active", "img__matched");
-            secondDiv.classList.add("img__matched");
+            firstDivChild.classList.replace("img__active", "img__matched");
+            secondDivChild.classList.replace("img__active", "img__matched");
             divsNotClickable();
             setTimeout(function () {
               firstDiv.remove();
@@ -217,14 +224,17 @@ for (let i = 0; i < divs.length; i++) {
           } else {
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            secondDiv.classList.add("img__wrong");
+
             console.log("images do not match!");
             divsNotClickable();
+            secondDivChild.classList.replace("img__active", "img__wrong");
+
             setTimeout(function () {
               secondDivChild.style.display = "none";
-              secondDiv.classList.remove("img__wrong");
+              secondDivChild.classList.replace("img__wrong", "img__active");
+
               firstDivChild.style.display = "none";
-              firstDiv.classList.remove("img__active");
+
               firstDiv = "";
               secondDiv = "";
               divsClickable();
@@ -239,8 +249,8 @@ for (let i = 0; i < divs.length; i++) {
             score.innerText = `Score: ${scoreCounter}`;
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            firstDiv.classList.replace("img__active", "img__matched");
-            secondDiv.classList.add("img__matched");
+            firstDivChild.classList.replace("img__active", "img__matched");
+            secondDivChild.classList.replace("img__active", "img__matched");
             divsNotClickable();
             setTimeout(function () {
               firstDiv.remove();
@@ -252,14 +262,17 @@ for (let i = 0; i < divs.length; i++) {
           } else {
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            secondDiv.classList.add("img__wrong");
+
             console.log("images do not match!");
             divsNotClickable();
+            secondDivChild.classList.replace("img__active", "img__wrong");
+
             setTimeout(function () {
               secondDivChild.style.display = "none";
-              secondDiv.classList.remove("img__wrong");
+              secondDivChild.classList.replace("img__wrong", "img__active");
+
               firstDivChild.style.display = "none";
-              firstDiv.classList.remove("img__active");
+
               firstDiv = "";
               secondDiv = "";
               divsClickable();
@@ -274,8 +287,8 @@ for (let i = 0; i < divs.length; i++) {
             score.innerText = `Score: ${scoreCounter}`;
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            firstDiv.classList.replace("img__active", "img__matched");
-            secondDiv.classList.add("img__matched");
+            firstDivChild.classList.replace("img__active", "img__matched");
+            secondDivChild.classList.replace("img__active", "img__matched");
             divsNotClickable();
             setTimeout(function () {
               firstDiv.remove();
@@ -287,14 +300,17 @@ for (let i = 0; i < divs.length; i++) {
           } else {
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            secondDiv.classList.add("img__wrong");
+
             console.log("images do not match!");
             divsNotClickable();
+            secondDivChild.classList.replace("img__active", "img__wrong");
+
             setTimeout(function () {
               secondDivChild.style.display = "none";
-              secondDiv.classList.remove("img__wrong");
+              secondDivChild.classList.replace("img__wrong", "img__active");
+
               firstDivChild.style.display = "none";
-              firstDiv.classList.remove("img__active");
+
               firstDiv = "";
               secondDiv = "";
               divsClickable();
@@ -309,9 +325,10 @@ for (let i = 0; i < divs.length; i++) {
             score.innerText = `Score: ${scoreCounter}`;
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            firstDiv.classList.replace("img__active", "img__matched");
-            secondDiv.classList.add("img__matched");
+            firstDivChild.classList.replace("img__active", "img__matched");
+            secondDivChild.classList.replace("img__active", "img__matched");
             divsNotClickable();
+
             setTimeout(function () {
               firstDiv.remove();
               secondDiv.remove();
@@ -322,14 +339,17 @@ for (let i = 0; i < divs.length; i++) {
           } else {
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            secondDiv.classList.add("img__wrong");
+
             console.log("images do not match!");
             divsNotClickable();
+            secondDivChild.classList.replace("img__active", "img__wrong");
+
             setTimeout(function () {
               secondDivChild.style.display = "none";
-              secondDiv.classList.remove("img__wrong");
+              secondDivChild.classList.replace("img__wrong", "img__active");
+
               firstDivChild.style.display = "none";
-              firstDiv.classList.remove("img__active");
+
               firstDiv = "";
               secondDiv = "";
               divsClickable();
@@ -344,8 +364,8 @@ for (let i = 0; i < divs.length; i++) {
             score.innerText = `Score: ${scoreCounter}`;
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            firstDiv.classList.replace("img__active", "img__matched");
-            secondDiv.classList.add("img__matched");
+            firstDivChild.classList.replace("img__active", "img__matched");
+            secondDivChild.classList.replace("img__active", "img__matched");
             divsNotClickable();
             setTimeout(function () {
               firstDiv.remove();
@@ -357,14 +377,17 @@ for (let i = 0; i < divs.length; i++) {
           } else {
             let secondDivChild = secondDiv.children[0];
             secondDivChild.style.display = "block";
-            secondDiv.classList.add("img__wrong");
+
             console.log("images do not match!");
             divsNotClickable();
+            secondDivChild.classList.replace("img__active", "img__wrong");
+
             setTimeout(function () {
               secondDivChild.style.display = "none";
-              secondDiv.classList.remove("img__wrong");
+              secondDivChild.classList.replace("img__wrong", "img__active");
+
               firstDivChild.style.display = "none";
-              firstDiv.classList.remove("img__active");
+
               firstDiv = "";
               secondDiv = "";
               divsClickable();
@@ -387,4 +410,8 @@ function divsClickable() {
   for (let i = 0; i < divs.length; i++) {
     divs[i].classList.remove("disabled");
   }
+}
+
+if (scoreCounter === 8) {
+  alert("Good Job! You Won!");
 }

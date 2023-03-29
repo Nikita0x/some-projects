@@ -110,7 +110,7 @@ img:hover {
 }
 
 .img__matched {
-  border: 10px solid rgba(20, 154, 11, 0.929);
+  border: 10px solid rgba(20, 154, 11, 0.929) !important;
   transition: transform border-color 0.5s ease-out;
   transform: scale(1.04);
   margin-bottom: 12px;
