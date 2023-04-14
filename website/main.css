@@ -195,13 +195,12 @@ body {
 }
 
 .feature {
-  border: 1px solid red;
   margin-top: 130px;
-  margin-bottom: 126px;
 }
 .feature .container .items {
   display: flex;
   position: relative;
+  margin-bottom: 130px;
   justify-content: space-between;
 }
 .feature .container .items .item {
@@ -231,7 +230,6 @@ body {
   cursor: pointer;
 }
 .feature .container .items .item:hover img {
-  border: 2px solid red;
   border-radius: 10px;
 }
 .feature .container .items .item:hover p::after {
@@ -252,6 +250,98 @@ body {
   width: 100%;
   top: 62px;
   left: 0;
+}
+
+.abouts {
+  display: flex;
+  align-items: center;
+}
+.abouts .abouts__left {
+  position: relative;
+  border: 1px solid red;
+  width: 829.22px;
+  height: 646px;
+  background: url("./img/abouts/background.png");
+}
+.abouts .abouts__left .front {
+  position: absolute;
+  border: 1px solid red;
+  width: 344px;
+  height: 492px;
+  left: 321px;
+  top: 129px;
+  z-index: 1;
+  filter: drop-shadow(0px 10px 45px rgba(47, 47, 47, 0.15));
+}
+.abouts .abouts__left .back1 {
+  position: absolute;
+  width: 238px;
+  border: 1px solid red;
+  top: 25%;
+  left: 575px;
+  height: 343px;
+  z-index: 0;
+}
+.abouts .abouts__left .back2 {
+  position: absolute;
+  width: 238px;
+  top: 25%;
+  left: 199px;
+  border: 1px solid red;
+  height: 343px;
+  z-index: 0;
+}
+.abouts .abouts__right {
+  margin-left: 83px;
+  width: 460px;
+  border: 1px solid red;
+  height: 355px;
+}
+.abouts .abouts__right .subheading {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #f59b00;
+  opacity: 1;
+}
+.abouts .abouts__right .heading {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 140%;
+  text-transform: capitalize;
+  color: #2f2f2f;
+}
+.abouts .abouts__right .paragraph {
+  font-size: 16px;
+  margin-top: 25px;
+  line-height: 160%;
+  text-transform: capitalize;
+  color: #2f2f2f;
+  opacity: 0.9;
+}
+.abouts .abouts__right .btn {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  gap: 10px;
+  width: 141px;
+  height: 49px;
+  left: 1233px;
+  top: 32px;
+  background: #f59b00;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: #ffffff;
+  opacity: 1;
+  border: none;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */
