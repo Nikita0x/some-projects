@@ -1,0 +1,194 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+/* reset */
+
+body {
+  background-color: rgb(164, 123, 73);
+  font-family: "Indie Flower", sans-serif;
+}
+/* container */
+.container {
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+  background-color: rgb(171, 102, 18);
+  text-align: center;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgb(4, 4, 8);
+  background-color: rgb(188, 103, 0);
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  flex-direction: column;
+  background-color: rgb(22, 133, 96);
+  border: 1px solid red;
+}
+
+.item {
+  position: relative;
+  color: rgb(162, 33, 33);
+  font-size: 30px;
+  background-color: rgb(188, 103, 0);
+  max-width: 500px;
+  text-overflow: clip;
+  color: white;
+  padding-right: 40px;
+  padding-left: 40px;
+  border: 1px solid rgb(0, 0, 0);
+  max-height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 5px;
+}
+
+/* button add */
+#add {
+  margin-top: 5px;
+  margin-left: 20px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 900;
+}
+#add:hover {
+  background-color: blueviolet;
+  cursor: pointer;
+}
+#add:active {
+  background-color: rgb(92, 43, 138);
+}
+
+/* clear all button */
+#clear {
+  font-size: 25px;
+  margin-left: 100px;
+  background-color: cadetblue;
+  color: white;
+  border: 1px solid silver;
+  cursor: pointer;
+}
+
+#clear:hover {
+  background-color: rgb(67, 130, 132);
+}
+#clear:active {
+  background-color: rgb(40, 88, 90);
+}
+
+/* input form */
+#form {
+  margin-top: 5px;
+  margin-left: 20px;
+  background-color: rgb(123, 70, 5);
+  color: white;
+}
+#form::placeholder {
+  color: rgb(162, 159, 159);
+}
+
+#form:focus {
+}
+
+/* div and button to delete it */
+.testDiv {
+  border: 1px solid red;
+  position: relative;
+  display: flex;
+}
+.deleteDiv {
+  position: absolute;
+  opacity: 1;
+  right: 0;
+  height: 100%;
+  width: 40px;
+  color: white;
+  background-color: red;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  transition: opacity 0.1s ease;
+}
+#deleteDiv:active {
+  background-color: rgb(160, 5, 5);
+}
+.testDiv:hover > #deleteDiv {
+  opacity: 1;
+}
+
+/* newDiv dynamically created */
+div[id^="newDiv"] {
+  position: relative;
+  display: flex;
+}
+
+/* delete button */
+button[id^="deleteDiv"] {
+  opacity: 0;
+}
+
+div[id^="newDiv"]:hover button[id^="deleteDiv"] {
+  background-color: rgb(255, 0, 0);
+  opacity: 1;
+}
+
+button[id^="deleteDiv"]:hover:active {
+  background-color: rgb(124, 6, 6);
+}

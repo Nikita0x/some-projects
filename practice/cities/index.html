@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cities</title>
+    <link rel="stylesheet" href="dist/output.css" />
+  </head>
+
+  <!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->
+
+  <!-- body -->
+
+  <body class="overflow-x-hidden bg-gradient-to-r from-slate-300 to-white">
+    <!-- Tab links -->
+    <div
+      class="flex items-center -mx-1 -mt-1 border-4 border-solid tab justify-evenly navColor"
+    >
+      <button
+        class="pb-2 text-4xl duration-300 ease-in-out rounded-t-lg text-zinc-200 tablinks active:bg-orange-500 focus:bg-orange-500"
+        onclick="openCity(event, 'London')"
+      >
+        <span class="hover:border-b-4 hover:border-b-orange-500">London</span>
+      </button>
+      <button
+        class="pb-2 text-4xl duration-300 ease-in-out rounded-t-lg active:bg-orange-500 focus:bg-orange-500 text-zinc-200 tablinks"
+        onclick="openCity(event, 'NewYork')"
+      >
+        <span class="hover:border-b-4 hover:border-b-orange-500">New York</span>
+      </button>
+      <button
+        class="pb-2 text-4xl duration-300 ease-in-out rounded-t-lg active:bg-orange-500 focus:bg-orange-500 text-zinc-200 tablinks"
+        onclick="openCity(event, 'Shanghai')"
+      >
+        <span class="hover:border-b-4 hover:border-b-orange-500">Shanghai</span>
+      </button>
+
+      <button
+        id="welcomePage"
+        class="hidden"
+        onclick="openCity(event, 'welcome')"
+      ></button>
+    </div>
+
+    <!-- Tab content -->
+
+    <!-- London -->
+    <div id="London" class="tabcontent">
+      <div class="pt-10 pb-5">
+        <div class="flex justify-center object-contain">
+          <img src="img/london.webp" alt="" class="" />
+        </div>
+        <p class="text-lg text-center">
+          London is the capital city of England.
+        </p>
+        <!--List London Keypoints  -->
+        <ul class="pl-5 list-disc list-inside">
+          <li>
+            Population: Approximately
+            <span class="font-bold underline">9 million people</span> in the
+            metropolitan area.
+          </li>
+          <li>
+            Economy: London is one of the largest financial centers in the
+            world, with a
+            <span class="font-bold underline">GDP of over $700 billion</span> in
+            2020.
+          </li>
+          <li>
+            History: London has a rich and diverse history, with roots dating
+            back to the Roman Empire.
+          </li>
+          <li>
+            Tourist Attractions: London is one of the most popular tourist
+            destinations in the world, attracting over 30 million visitors
+            annually. Some of its famous landmarks include Buckingham Palace
+            (the official residence of the monarch), the Tower of London (a
+            historic castle and former prison), and the Elizabeth Tower
+            (formerly known as Big Ben).
+          </li>
+        </ul>
+      </div>
+
+      <!-- London carousel  -->
+
+      <!-- Slideshow container -->
+      <div class="relative max-w-5xl m-auto slideshow-container">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="number_text">1 / 4</div>
+          <img src="img/london_carousel_1.jpg" alt="London1" class="w-full" />
+          <div class="text">
+            <span id="highlight"
+              >Union Jack is the national flag of the United Kingdom</span
+            >
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="number_text">2 / 4</div>
+          <img src="img/london_carousel_2.jpg" alt="London1" class="w-full" />
+          <div class="text">
+            <span id="highlight">Look at the city from bird's-eye view</span>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="number_text">3 / 4</div>
+          <img src="img/london_carousel_3.jpg" alt="London1" class="w-full" />
+          <div class="text"><span id="highlight">London Eye</span></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="number_text">4 / 4</div>
+          <img src="img/london_carousel_4.jpg" alt="London1" class="w-full" />
+          <div class="text"><span id="highlight">One of the alleys</span></div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev hover:bg-slate-50" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next hover:bg-slate-50" onclick="plusSlides(1)">❯</a>
+      </div>
+      <br />
+
+      <!-- The dots/circles -->
+      <div class="text-center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+    </div>
+
+    <!-- London carousel ends -->
+
+    <!-- New York -->
+    <div id="NewYork" class="tabcontent">
+      <div class="pt-10 pb-5">
+        <div class="flex justify-center object-contain">
+          <img src="img/newyork.jpg" class="" alt="" />
+        </div>
+        <h3 class="text-lg text-center">
+          New York is the largest city in America.
+        </h3>
+
+        <!-- List NewYork Keypoints -->
+        <ul class="pl-5 list-disc list-inside">
+          <li>
+            Population: Approximately
+            <span class="font-bold underline"> 8.336 million</span> people in
+            the city.
+          </li>
+          <li>
+            Economy: New York City is one of the largest financial centers in
+            the world, with a
+            <span class="font-bold underline">GDP of over $1.5 trillion</span>
+            in 2020.
+          </li>
+          <li>
+            History: New York City has a rich and diverse history, with roots
+            dating back to the 17th century.
+          </li>
+          <li>
+            Tourist Attractions: New York City is one of the most popular
+            tourist destinations in the world, attracting over 60 million
+            visitors annually. Some of its famous landmarks include the Statue
+            of Liberty (a symbol of freedom and democracy), Central Park (a
+            large urban park in the heart of the city), and the Empire State
+            Building (a skyscraper that was once the tallest building in the
+            world).
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- carousel new york -->
+
+    <!-- Slideshow container -->
+    <!-- <div class="relative max-w-5xl m-auto slideshow-container"> -->
+      <!-- Full-width images with number and caption text -->
+      <!-- <div class="mySlides_ny fade_ny">
+        <div class="number_text_ny">1 / 4</div>
+        <img src="/newyork_1.jpg" alt="newyork" class="w-full" />
+        <div class="text_ny">
+          <span id="highlight">Night life</span>
+        </div>
+      </div>
+
+      <div class="mySlides_ny fade_ny">
+        <div class="number_text_ny">2 / 4</div>
+        <img src="/newyork_2.jpg" alt="newyork" class="w-full" />
+        <div class="text_ny">
+          <span id="highlight">New York is famous for its yellow cabs</span>
+        </div>
+      </div>
+
+      <div class="mySlides_ny fade_ny">
+        <div class="number_text_ny">3 / 4</div>
+        <img src="/newyork_3.jpg" alt="newyork" class="w-full" />
+        <div class="text_ny">
+          <span id="highlight">Central park is in the heart of the city</span>
+        </div>
+      </div>
+
+      <div class="mySlides_ny fade_ny">
+        <div class="number_text_ny">4 / 4</div>
+        <img src="/newyork_4.jpg" alt="newyork" class="w-full" />
+        <div class="text_ny">
+          <span id="highlight">Iconic Brooklyn Bridge</span>
+        </div>
+      </div> -->
+
+      <!--  Next and previous buttons -->
+      <!-- <div>
+        <a class="prev_ny hover:bg-slate-50" onclick="plusSlides_ny(-1)"
+          >&#10094;</a
+        >
+        <a class="next_ny hover:bg-slate-50" onclick="plusSlides_ny(1)">❯</a>
+      </div>
+      <br /> -->
+
+      <!-- The dots/circles -->
+      <!-- <div class="text-center">
+        <span class="dot_ny" onclick="currentSlide_ny(1)"></span>
+        <span class="dot_ny" onclick="currentSlide_ny(2)"></span>
+        <span class="dot_ny" onclick="currentSlide_ny(3)"></span>
+        <span class="dot_ny" onclick="currentSlide_ny(4)"></span>
+      </div>
+    </div> -->
+
+    <!-- carousel new york ends -->
+
+    <div id="Shanghai" class="pt-10 pb-5 tabcontent">
+      <div class="flex justify-center object-contain">
+        <img src="img/shanghai.webp" class="" alt="" />
+      </div>
+      <h3 class="text-lg text-center">Shanghai</h3>
+      <!-- List keypoints Shanghai -->
+      <ul class="pl-5 list-disc list-inside">
+        <li>
+          Population:
+          <span class="font-bold underline">Approximately 24 million</span>
+          people in the metropolitan area, making it one of the largest cities
+          in the world.
+        </li>
+        <li>
+          Economy: Shanghai is the financial and commercial center of mainland
+          China, with a Gross Domestic Product (GDP) of
+          <span class="font-bold underline">over $1 trillion</span> in 2020.
+        </li>
+        <li>
+          History: Shanghai has a rich cultural history, with roots dating back
+          to the Song dynasty in the 11th century.
+        </li>
+        <li>
+          Tourist Attractions: Shanghai is a popular tourist destination,
+          attracting over 30 million visitors annually. Some of its famous
+          landmarks include the Shanghai Tower (632 meters tall), the Bund (a
+          historic waterfront promenade), and Yuyuan Garden (a traditional
+          Chinese garden dating back to the 16th century).
+        </li>
+      </ul>
+    </div>
+
+    <!-- Welcome page -->
+    <div id="welcome" class="hidden pt-10 pb-5 tabcontent">
+      <div class="flex justify-center object-contain">
+        <img src="img/countries.svg" class="" alt="" />
+      </div>
+      <h3 class="text-lg text-center">Choose a city</h3>
+    </div>
+  </body>
+  <script src="dist/main.js"></script>
+  <script src="dist/newyork.js"></script>
+</html>

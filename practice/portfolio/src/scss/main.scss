@@ -1,0 +1,92 @@
+$link_font: 'Brush Script MT', cursive;
+
+// color palette
+// https://in.pinterest.com/pin/764767580450265013/
+// orange
+// #1b263b - darkblue
+// #415a77 - light blue
+// #778da9 - very light blue
+// #e0e1dd - cream
+
+// 
+
+$background_color: #1b263b;
+$font_color: #e0e1dd;
+$hover_color: orange;
+$visited_links: #778da9;
+$content_background: #415a77;
+
+body {
+    background: $background_color;
+    color: $font_color;
+}
+
+#navbar {
+    ul {
+        list-style: none;
+    }
+    img {
+        width: 40px;
+        height: 40px;
+        transition-duration: 100ms;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+    img:hover {
+        transform: translate(-5px, -3px);
+        filter: grayscale(0%);
+    }
+    a {
+        color: $font_color;
+        font-size: 28px;
+        text-decoration: none;
+        font-family: $link_font;
+    }
+    a:hover {
+        color: $hover_color;
+    }
+
+}
+
+
+
+// projects.html
+
+#projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects-content {
+    display: flex;
+    justify-content: left;
+    width: 60%;
+    height: 100vh;
+    background: $content_background;
+    border: 2px solid $font_color;
+
+    ul {
+        li:hover {
+            width: 100%;
+            background: rgb(105, 38, 38);
+        }
+    }
+
+    a {
+        color: $font_color;
+        text-decoration: none;
+        font-size: 28px;
+    }
+
+
+    a:visited {
+        color: 000000;
+    }
+
+    a:hover {
+        color: $hover_color;
+    }
+
+
+}
