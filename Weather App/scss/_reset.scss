@@ -1,0 +1,51 @@
+/*
+ In your main.scss file, use the @import directive to import your reset SCSS file. The @import directive tells Sass to include the contents of another file in the current file.
+
+For example, if you have a reset SCSS file called _reset.scss in a folder called styles, you would add the following line to your main.scss file: 
+
+@import 'styles/reset';
+
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
